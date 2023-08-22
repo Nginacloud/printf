@@ -56,7 +56,7 @@ int _printf(const char *format, ...)
 					_putchar('%');
 					len++;
 					continue;
-					return (-1);
+					/*return (-1);*/
 			}
 		}
 	}
