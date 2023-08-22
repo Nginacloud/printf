@@ -1,24 +1,16 @@
 #include "main.h"
-#include <unistd.h>
 #include <stdarg.h>
 #include <stddef.h>
-#include <stdio.h>
-
 int _printf(const char *format, ...)
 {
 	va_list ap;
 	int i;
 	int len = 0;
-	char takenChar;
-	char *takenString;
-	int j;
 	char chartoCheck;
 
 	if (format == NULL)
 		return (-1);
-
 	va_start(ap, format);
-	
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
@@ -32,20 +24,12 @@ int _printf(const char *format, ...)
 			switch(chartoCheck)
 			{
 				case 'c':
-					takenChar = va_arg(ap, int);
-					_putchar(takenChar);
+					_putchar(va_arg(ap, int));
 					i++;
 					len++;
 					continue;
 				case 's':
-					takenString = va_arg(ap, char *);
-					j = 0;
-					while (takenString[j] != '\0')
-					{
-						_putchar(takenString[j]);
-						j++;
-						len++;
-					}
+					print_string(va_arg(ap, char *), &len);
 					i++;
 					continue;
 				case '%':
@@ -54,9 +38,7 @@ int _printf(const char *format, ...)
 					continue;
 			}
 		}
-	}
-
-	
+	}	
 	va_end(ap);
 	return (len);
 }
