@@ -1,6 +1,7 @@
 #include "main.h"
 #include <unistd.h>
 #include <stdarg.h>
+#include <stdio.h>
 int _printf(const char *format, ...)
 {
 	va_list ap;
@@ -29,6 +30,7 @@ int _printf(const char *format, ...)
 					takenChar = va_arg(ap, int);
 					_putchar(takenChar);
 					i++;
+					len++;
 					continue;
 				case 's':
 					takenString = va_arg(ap, char *);
@@ -37,6 +39,7 @@ int _printf(const char *format, ...)
 					{
 						_putchar(takenString[j]);
 						j++;
+						len++;
 					}
 					i++;
 					continue;
@@ -48,9 +51,4 @@ int _printf(const char *format, ...)
 	va_end(ap);
 	_putchar('\n');
 	return (len);
-}
-
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
 }
