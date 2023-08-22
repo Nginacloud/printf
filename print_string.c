@@ -11,7 +11,6 @@ void print_string(char *str, int *len)
 	{
 		_putchar(*str/*[j]*/);
 		/*j*/(*len)++;
-		/*/*len = *len + 1*/;
 		str++;
 	}
 }
