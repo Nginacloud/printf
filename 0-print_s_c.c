@@ -1,16 +1,21 @@
 #include "main.h"
 #include <unistd.h>
 #include <stdarg.h>
+#include <stddef.h>
 #include <stdio.h>
+
 int _printf(const char *format, ...)
 {
 	va_list ap;
 	int i;
-	int len;
+	int len = 0;
 	char takenChar;
 	char *takenString;
 	int j;
 	char chartoCheck;
+
+	if (format == NULL)
+		return (-1);
 
 	va_start(ap, format);
 	
@@ -43,12 +48,15 @@ int _printf(const char *format, ...)
 					}
 					i++;
 					continue;
+				case '%':
+					_putchar('%');
+					i++;
+					continue;
 			}
 		}
 	}
 
 	
 	va_end(ap);
-	_putchar('\n');
 	return (len);
 }
