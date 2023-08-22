@@ -52,7 +52,6 @@ int _printf(const char *format, ...)
 				default:
 					_putchar('%');
 					len++;
-					continue;
 					return (-1);
 			}
 		}
