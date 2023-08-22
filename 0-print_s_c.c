@@ -53,8 +53,8 @@ int _printf(const char *format, ...)
 					len++; /*increment len*/
 					continue;
 				default:
-					_putchar('%');
-					len++;
+					/*_putchar('%');*/
+					i++;
 					continue;
 					/*return (-1);*/
 			}
