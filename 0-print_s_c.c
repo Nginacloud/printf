@@ -3,6 +3,12 @@
 #include <stdarg.h>
 #include <stddef.h>
 #include <stdio.h>
+/**
+ * _printf - printf function
+ * @format: string
+ * 
+ * Return: number of characters
+ */
 
 int _printf(const char *format, ...)
 {
