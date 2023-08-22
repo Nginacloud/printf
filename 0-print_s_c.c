@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdarg.h>
-#include <stddef.h>
 /**
  * _printf - printf function
  * @format: string
@@ -36,20 +35,20 @@ int _printf(const char *format, ...)
 					_putchar(va_arg(ap, int));
 					i++;
 					len++;
-					break;
+					continue;
 				case 's':
 					print_string(va_arg(ap, char *), &len);
 					i++;
-					break;
+					continue;
 				case '%':
 					_putchar('%');
 					i++;
 					len++; /*increment len*/
-					break;
+					continue;
 				default:
 					_putchar('%');
 					len++;
-					break;
+					continue;
 			}
 		}
 	}	
