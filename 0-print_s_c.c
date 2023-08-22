@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 					if (str == NULL)
 					{
 						print_string("(null)", &len);
-						return (-1);
+						return (len);
 					}
 					print_string(str, &len);
 					/*i++;*/
