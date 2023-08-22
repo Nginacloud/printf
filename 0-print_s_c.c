@@ -53,6 +53,7 @@ int _printf(const char *format, ...)
 					_putchar('%');
 					len++;
 					return (-1);
+					continue;
 			}
 		}
 	}
