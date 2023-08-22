@@ -4,7 +4,6 @@
 /**
  * _printf - printf function
  * @format: string
- * 
  * Return: number of characters
  */
 
@@ -14,6 +13,7 @@ int _printf(const char *format, ...)
 	int i;
 	int len = 0;
 	char chartoCheck;
+	char *str;
 
 	if (format == NULL)
 		return (-1);
@@ -38,7 +38,10 @@ int _printf(const char *format, ...)
 					len++;
 					continue;
 				case 's':
-					print_string(va_arg(ap, char *), &len);
+					str = va_arg(ap, char *);
+					if (str == NULL)
+						return (-1);
+					print_string(str, &len);
 					i++;
 					continue;
 				case '%':
@@ -47,12 +50,13 @@ int _printf(const char *format, ...)
 					len++; /*increment len*/
 					continue;
 				default:
-					_putchar('%');
+					/*_putchar('%');
 					len++;
-					continue;
+					continue;*/
+					return (-1);
 			}
 		}
-	}	
+	}
 	va_end(ap);
 	return (len);
 }
