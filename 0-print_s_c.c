@@ -40,6 +40,7 @@ int _printf(const char *format, ...)
 				case 's':
 					str = va_arg(ap, char *);
 					if (str == NULL)
+						print_string("(null)", &len);
 						return (-1);
 					print_string(str, &len);
 					i++;
@@ -50,10 +51,10 @@ int _printf(const char *format, ...)
 					len++; /*increment len*/
 					continue;
 				default:
-					_putchar('%');
-					len++;
+					/*_putchar('%');
+					*len++;
+					*/
 					return (-1);
-					continue;
 			}
 		}
 	}
