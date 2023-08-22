@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 
 void print_string(char *str, int *len)
 {
