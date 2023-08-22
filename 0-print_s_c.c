@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			chartoCheck = format[i + 1];
-			switch(chartoCheck)
+			switch (chartoCheck)
 			{
 				case 'c':
 					_putchar(va_arg(ap, int));
