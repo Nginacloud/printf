@@ -36,16 +36,16 @@ int _printf(const char *format, ...)
 					_putchar(va_arg(ap, int));
 					i++;
 					len++;
-					break;
+					continue;
 				case 's':
 					print_string(va_arg(ap, char *), &len);
 					i++;
-					break;
+					continue;
 				case '%':
 					_putchar('%');
 					i++;
 					len++; /*increment len*/
-					break;
+					continue;
 			}
 		}
 	}	
