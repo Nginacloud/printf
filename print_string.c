@@ -1,6 +1,7 @@
 #include "main.h"
+#include <stddef.h>
 
-static void print_string(char *str, int *len)
+void print_string(char *str, int *len)
 {
 	if (str == NULL)
 		str = "(null)";
