@@ -24,13 +24,16 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			_putchar(format[i]);
-			len++;
+			print_char(format[i], &len);
+			/*_putchar(format[i]);
+			len++;*/
 		}
 		else
 		{
-			chartoCheck = format[i + 1];
-			switch(chartoCheck)
+			i++; /*past %s*/
+			switch (format[i])
+			/*chartoCheck = format[i + 1];
+			switch(chartoCheck)*/
 			{
 				case 'c':
 					_putchar(va_arg(ap, int));
