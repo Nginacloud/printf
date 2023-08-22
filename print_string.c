@@ -2,12 +2,16 @@
 
 void print_string(char *str, int *len)
 {
-	int j = 0;
-	while (str[j]!= '\0')
+	/*int j = 0;*/
+	if (str == NULL)
 	{
-		_putchar(str[j]);
-		j++;
-		*len = *len + 1;
+		str = "(null)";
+	}
+	while (*str /*[j]*/ != '\0')
+	{
+		_putchar(*str/*[j]*/);
+		/*j*/(*len)++;
+		/*/*len = *len + 1*/;
+		str++;
 	}
 }
-
