@@ -52,11 +52,11 @@ int _printf(const char *format, ...)
 					i++;
 					len++; /*increment len*/
 					continue;
-				/*default:
+				default:
 					_putchar('%');
 					len++;
 					continue;
-					return (-1);*/
+					/*return (-1);*/
 			}
 		}
 	}
