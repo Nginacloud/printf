@@ -51,6 +51,7 @@ int _printf(const char *format, ...)
 					len++; /*increment len*/
 					continue;
 				default:
+					continue;
 					return (-1);
 			}
 		}
