@@ -50,6 +50,16 @@ int _printf(const char *format, ...)
 					break;
 				case '\0':
 					return (-1);
+				case 'd':
+					_putchar(va_arg(ap, int) + '0');
+                                        i++;
+                                        len++;
+                                        break;
+				case 'i':
+					_putchar(va_arg(ap, int) + '0');
+                                        i++;
+                                        len++;
+                                        break;	
 				default:
 					_putchar('%');
 					len++;
