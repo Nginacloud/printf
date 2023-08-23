@@ -46,7 +46,7 @@ int _printf(const char *format, ...)
 						return (len);
 					}
 					print_string(str, &len);
-					/*i++;*/
+					i++;
 					break;
 				case '%':
 					_putchar('%');
