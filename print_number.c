@@ -19,10 +19,10 @@ void print_number(int number, int *len)
 		{
 			number = number * -1;
 			numcpy = numcpy * -1;
-			*len = *len + 1;
+			(*len)++;
 		}
 	}
-	while (numcpy != 0)
+	while (numcpy / 10 != 0)
 	{
 		numcpy = numcpy / 10;
 		divisor = divisor * 10;
