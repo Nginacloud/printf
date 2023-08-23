@@ -48,6 +48,8 @@ int _printf(const char *format, ...)
 					i++;
 					len++; /*increment len*/
 					break;
+				case '\0':
+					return (-1);
 				default:
 					_putchar('%');
 					len++;
