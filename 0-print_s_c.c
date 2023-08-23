@@ -53,10 +53,10 @@ int _printf(const char *format, ...)
 					len++; /*increment len*/
 					continue;
 				default:
-					_putchar('%');
+					/*_putchar('%');*/
 					len++;
-					continue;
-					/*return (-1);*/
+					/*continue;*/
+					return (-1);
 			}
 		}
 	}
