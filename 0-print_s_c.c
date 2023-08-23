@@ -49,6 +49,7 @@ int _printf(const char *format, ...)
 					len++; /*increment len*/
 					break;
 				default:
+					putchar('%');
 					len++;
 					break;
 					/*return (-1);*/
