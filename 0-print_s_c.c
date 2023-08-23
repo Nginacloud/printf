@@ -51,14 +51,12 @@ int _printf(const char *format, ...)
 				case '\0':
 					return (-1);
 				case 'd':
-					_putchar(va_arg(ap, int) + '0');
+					print_number(va_arg(ap, int), &len);
                                         i++;
-                                        len++;
                                         break;
 				case 'i':
-					_putchar(va_arg(ap, int) + '0');
+					print_number(va_arg(ap, int), &len);
                                         i++;
-                                        len++;
                                         break;	
 				default:
 					_putchar('%');
