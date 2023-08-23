@@ -49,10 +49,7 @@ int _printf(const char *format, ...)
 					len++; /*increment len*/
 					break;
 				default:
-					_putchar('%');
-					len++;
-					break;
-					/*return (-1);*/
+					return (-1);
 			}
 		}
 	}
