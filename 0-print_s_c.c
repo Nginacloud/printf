@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 					_putchar(va_arg(ap, int));
 					i++;
 					len++;
-					continue;
+					break;
 				case 's':
 					str = va_arg(ap, char *);
 					if (str == NULL)
@@ -47,16 +47,16 @@ int _printf(const char *format, ...)
 					}
 					print_string(str, &len);
 					/*i++;*/
-					continue;
+					break;
 				case '%':
 					_putchar('%');
 					i++;
 					len++; /*increment len*/
-					continue;
+					break;
 				default:
 					_putchar('%');
 					len++;
-					continue;
+					break;
 					/*return (-1);*/
 			}
 		}
