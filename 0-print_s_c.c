@@ -54,7 +54,7 @@ int _printf(const char *format, ...)
 					continue;
 				default:
 					/*_putchar('%');*/
-					i++;
+					len++;
 					/*continue;*/
 					return (-1);
 			}
