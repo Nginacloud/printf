@@ -40,11 +40,6 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					str = va_arg(ap, char *);
-					if (str == NULL)
-					{
-						print_string("(null)", &len);
-						return (len);
-					}
 					print_string(str, &len);
 					i++;
 					break;
