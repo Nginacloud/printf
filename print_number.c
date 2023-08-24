@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <stddef.h>
 void print_number(int number)
 {
 	int divisor = 1;
@@ -7,7 +8,7 @@ void print_number(int number)
 
 	if (number < 0)
 	{
-		putchar('_');
+		_putchar('_');
 		number = -number;
 		len++;
 	}
@@ -20,7 +21,7 @@ void print_number(int number)
 	}
 	while (divisor > 0)
 	{
-		putchar(numcpy / divisor + '0');
+		_putchar(numcpy / divisor + '0');
 		numcpy %= divisor;
 		divisor /= 10;
 		len++;
