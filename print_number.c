@@ -1,7 +1,32 @@
 #include "main.h"
 #include <stdio.h>
-#include <limits.h>/*to handle INT MIN*/
 void print_number(int number)
+{
+	int divisor = 1;
+	int len = 0;
+
+	if (number < 0)
+	{
+		putchar('_');
+		number = -number;
+		len++;
+	}
+	int numcpy = number;
+
+	while (numcpy >= 10)
+	{
+		divisor *= 10;
+		numcpy /= 10;
+	}
+	while (divisor > 0)
+	{
+		putchar(numcpy / divisor + '0');
+		numcpy %= divisor;
+		divisor /= 10;
+		len++;
+	}
+}
+/*void print_number(int number, int *len)
 {
 	if (number < 0)
 	{
@@ -24,4 +49,4 @@ void print_number(int number)
 		divisor = divisor / 10;
 		*len = *len + 1;
 		}
-}
+}*/
