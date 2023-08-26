@@ -1,5 +1,38 @@
 #include "main.h"
 #include <stdio.h>
+#include <limits.h>
+void print_number(int number, int *len)
+{
+        int divisor = 1;
+
+        if (number == INT_MIN)
+        {
+                print_string("-2147483648", len);
+                return;
+        }
+        if (number < 0)
+        {
+                _putchar('-');
+                number = -number;
+                *len = *len + 1;
+        }
+        while ((number / divisor) > 9)
+        {
+                divisor = divisor * 10;
+        }
+        while (divisor > 0)
+        {
+                _putchar((number / divisor) + '0');
+                number = number % divisor;
+                divisor = divisor / 10;
+                *len = *len + 1;
+        }
+}
+
+
+
+/*#include "main.h"
+#include <stdio.h>
 #include <stddef.h>
 void print_number(int number)
 {
@@ -27,7 +60,7 @@ void print_number(int number)
 		len++;
 	}
 }
-/*void print_number(int number, int *len)
+*void print_number(int number, int *len)
 {
 	if (number < 0)
 	{
