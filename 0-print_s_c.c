@@ -58,6 +58,10 @@ int _printf(const char *format, ...)
 					print_number(va_arg(ap, int), &len);
 					i++;
 					break;
+				case 'b':
+					print_binary(va_arg(ap, int), &len);
+					i++;
+					break;
 				default:
 					_putchar('%');
 					len++;
